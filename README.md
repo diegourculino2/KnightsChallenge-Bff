@@ -5,6 +5,7 @@ Repositório do BFF para o teste técnico, que tratará as regras de negócio
 * [NodeJs](https://nodejs.org/)
 
 * Setar a variavel de ambiente para conseguir integrar com a camada de experiência localhost:
+
 MAC OS:
 export NODE_TLS_REJECT_UNAUTHORIZED=0
 
