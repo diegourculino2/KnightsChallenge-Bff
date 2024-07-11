@@ -1,5 +1,6 @@
 import * as express from "express";
 import { knightDelete } from "../services/delete-knights-service";
+import { getHeroes } from "../services/get-heroes-service";
 import {knightsAll} from "../services/get-knights-service";
 import {knightNew} from "../services/new-knights-service";
 
@@ -23,6 +24,16 @@ export const register = (app: express.Application) => {
         // tslint:disable-next-line:no-console
         console.log(req.body);
         knightNew(req.body)
+            .then((knights) => {
+                res.header("Access-Control-Allow-Origin", "*");
+                res.send(knights);
+            }, (reason) => {
+                res.status(500).send(reason.toString());
+            });
+    });
+
+    app.get("/knights/filter=hero", (req: express.Request, res: express.Response) => {
+        getHeroes()
             .then((knights) => {
                 res.header("Access-Control-Allow-Origin", "*");
                 res.send(knights);
