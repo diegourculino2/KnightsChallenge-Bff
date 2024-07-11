@@ -1,6 +1,6 @@
 import axios from "axios";
 import {gerarAtaque, gerarExperiencia} from "../controller/list-knights";
-import { IKnight, IKnightDTO, IKnightsResponse } from "../dto/knights-response";
+import {IKnightDTO, IKnightsResponse } from "../dto/knights-response";
 
 export function knightsAll() {
     return axios({
