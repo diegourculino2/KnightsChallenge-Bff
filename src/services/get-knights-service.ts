@@ -10,6 +10,7 @@ export function knightsAll() {
         .then((response) => {
             return (response as IKnightsResponse).data.map((rawKnight) => {
                 return {
+                    id: rawKnight.id,
                     name: rawKnight.name,
                     nickName: rawKnight.nickName,
                     birthday: rawKnight.birthday,
