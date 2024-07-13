@@ -5,7 +5,7 @@ import {IKnightDTO, IKnightsResponse } from "../dto/knights-response";
 export function getHeroes() {
     return axios({
         method: "get",
-        url: "https://localhost:44312/Knights/filter=Hero"
+        url: "http://knights.challenge-api:8080/Knights/filter=Hero"
     })
         .then((response) => {
             return (response as IKnightsResponse).data.map((rawKnight) => {
@@ -15,7 +15,7 @@ export function getHeroes() {
                     nickName: rawKnight.nickName,
                     birthday: rawKnight.birthday,
                     ataque: gerarAtaque(),
-                    experiencia: gerarExperiencia()
+                    experiencia: gerarExperiencia(rawKnight.birthday)
                 } as IKnightDTO;
             });
         }, (reason) => {

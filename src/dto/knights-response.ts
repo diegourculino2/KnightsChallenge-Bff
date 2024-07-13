@@ -4,6 +4,8 @@ export interface IKnight {
     nickName: string;
     birthday: string;
     weapons: IWeapons[];
+    attributes: IAttributes;
+    keyAttribute: string;
 }
 
 export interface IWeapons {
@@ -12,6 +14,15 @@ export interface IWeapons {
     attr: number;
     equipped: boolean;
   }
+
+export interface IAttributes {
+    strength: number;
+    dexterity: number;
+    constitution: number;
+    intelligence: number;
+    wisdom: number;
+    charisma: number;
+}
 
 export interface IKnightsResponse {
     data: IKnight[];
@@ -22,6 +33,6 @@ export interface IKnightDTO {
     name: string;
     nickName: string;
     birthday: string;
-    ataque: string;
-    experiencia: string;
+    ataque: number;
+    experiencia: number;
 }

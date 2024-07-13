@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function knightSet(id: string, req: any) {
-    const uri = "https://localhost:44312/Knights/" + id;
+    const uri = "http://knights.challenge-api:8080/Knights/" + id;
     return axios({
         method: "put",
         data: req,

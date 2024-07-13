@@ -1,0 +1,17 @@
+version: "3.8"
+
+networks:
+  knightschallenge_some-net:
+    external: true
+
+services:
+  knights.challenge-bff:
+    build:
+      context: .
+    container_name: knights.challenge-bff
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+    networks:
+      - knightschallenge_some-net

@@ -4,7 +4,7 @@ export function knightNew(req: any) {
     return axios({
         method: "post",
         data: req,
-        url: "https://localhost:44312/Knights"
+        url: "http://knights.challenge-api:8080/Knights/"
     })
         .then((response) => {
             return response.status;

@@ -3,7 +3,7 @@ import {gerarAtaque, gerarExperiencia} from "../controller/list-knights";
 import {IKnightDTO } from "../dto/knights-response";
 
 export function knightSingleGet(id: string) {
-    const uri = "https://localhost:44312/Knights/" + id;
+    const uri = "http://knights.challenge-api:8080/Knights/" + id;
     return axios({
         method: "get",
         url: uri
@@ -16,7 +16,7 @@ export function knightSingleGet(id: string) {
                     nickName: rawKnight.nickname,
                     birthday: rawKnight.birthday,
                     ataque: gerarAtaque(),
-                    experiencia: gerarExperiencia()
+                    experiencia: gerarExperiencia(rawKnight.birthday)
                 } as IKnightDTO;
         }, (reason) => {
             return Promise.reject(reason);

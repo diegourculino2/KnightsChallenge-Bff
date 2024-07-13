@@ -2,29 +2,27 @@
 Repositório do BFF para o teste técnico, que tratará as regras de negócio
 
 ### Pré-requisitos
-* [NodeJs](https://nodejs.org/)
 
-* Setar a variavel de ambiente para conseguir integrar com a camada de experiência localhost:
-
-MAC OS:
-export NODE_TLS_REJECT_UNAUTHORIZED=0
-
-Windows:
-set NODE_TLS_REJECT_UNAUTHORIZED=0
-
-Linux:
-export NODE_TLS_REJECT_UNAUTHORIZED=0
+* [Docker](https://www.docker.com/products/docker-desktop/)
 
 ## Começando
 
 * Clonar o repositório
-* npm install
-* npm run start
+* Na raiz do repositorio, executar docker-compose up -d
 
 ## Lista de EndPoints
 
-[GET] /Knights - Lista todos os knights tratando o Ataque e a Experiência
-///////Ainda faltando os demais endpoints
+[GET] /knights - Lista todos os knights 
+
+[GET] /knights/{id} - Lista apenas 1 knight de acordo com o id
+
+[GET] /knights/filter={filter} - Lista os herois quando setado o filter=heros  
+
+[POST] /knights/ - Insere um novo knight
+
+[DEL] /knights/{id} - Remove um knight e insere na lista de Heros de acordo com o id
+
+[PUT] /knights/{id} - Edita o apelido de um knight de acordo com o id
 
 ## Construído com
 

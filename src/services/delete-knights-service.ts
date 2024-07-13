@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function knightDelete(id: string) {
-    const uri = "https://localhost:44312/Knights/" + id;
+    const uri = "http://knights.challenge-api:8080/Knights/" + id;
     return axios({
         method: "delete",
         url: uri

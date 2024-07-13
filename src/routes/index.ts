@@ -3,7 +3,7 @@ import { knightDelete } from "../services/delete-knights-service";
 import { getHeroes } from "../services/get-heroes-service";
 import {knightsAll} from "../services/get-knights-service";
 import { knightSingleGet } from "../services/get-single-knigh-service";
-import {knightNew} from "../services/new-knights-service";
+import {knightNew} from "../services/post-knights-service";
 import { knightSet } from "../services/put-knigh-service";
 
 export const register = (app: express.Application) => {
@@ -17,7 +17,11 @@ export const register = (app: express.Application) => {
             .then((knights) => {
                 res.header("Access-Control-Allow-Origin", "*");
                 res.send(knights);
+                // tslint:disable-next-line:no-console
+                console.log("then");
             }, (reason) => {
+                // tslint:disable-next-line:no-console
+                console.log("for then");
                 res.status(500).send(reason.toString());
             });
     });
